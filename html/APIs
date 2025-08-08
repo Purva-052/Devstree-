@@ -1,0 +1,45 @@
+!--Geo location-->
+<button onclick="getLocation()">Get Location</button>
+<p id="location"></p>
+
+<script>
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((pos) => {
+        document.getElementById("location").innerHTML =
+          "Latitude: " + pos.coords.latitude + "<br>Longitude: " + pos.coords.longitude;
+      });
+    } else {
+      document.getElementById("location").innerText = "Geolocation is not supported.";
+    }
+  }
+</script>
+
+
+!--Drag and Drop API-->
+<style>
+  #drag {
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+    margin-bottom: 20px;
+  }
+  #drop {
+    width: 200px;
+    height: 100px;
+    border: 2px dashed #333;
+  }
+</style>
+
+<div id="drag" draggable="true">Drag me</div>
+<div id="drop">Drop here</div>
+
+<script>
+  drag.ondragstart = (e) => e.dataTransfer.setData("text", "drag");
+  drop.ondragover = (e) => e.preventDefault();
+  drop.ondrop = (e) => {
+    e.preventDefault();
+    drop.appendChild(document.getElementById("drag"));
+  };
+</script>
+
