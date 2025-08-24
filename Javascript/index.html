@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz App</title>
+  <link rel="stylesheet" href="style.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Start Page -->
+  <div class="container" id="start-page">
+    <h1>Let's start the Quiz! </h1>
+    <p>Enter your name:</p>
+    <input type="text" id="username" placeholder="Enter your name">
+    <button onclick="startQuiz()">Submit</button>
+  </div>
+
+  <!-- Quiz Page -->
+  <div class="container" id="quiz-page" style="display:none;">
+    <h2 id="welcome-text"></h2>
+    <p id="progress"></p>
+    <p id="live-score">Score: 0 / 10</p> 
+    <div id="question-container"></div>
+    <div id="answer-buttons"></div>
+    <button id="next-btn" onclick="nextQuestion()">Next</button>
+    <button id="reset-btn" onclick="resetQuiz()">Reset</button>
+
+  </div>
+
+  <!-- Result Page -->
+  <div class="container" id="result-page" style="display:none;">
+    <h2>Quiz Completed </h2>
+    <p id="score-text"></p>
+    <button onclick="location.reload()">Restart Quiz</button>
+  </div>
+</body>
+</html>
+  <script src="index.js"></script>
