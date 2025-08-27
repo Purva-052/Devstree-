@@ -389,21 +389,21 @@ document.getElementById("searchInput").addEventListener("input", function () {
 
 function renderTable(studentsList = null) {
   const tbody = document.querySelector("tbody");
-  tbody.innerHTML = ""; // clear old rows
+  tbody.innerHTML = ""; 
 
   const students = studentsList || getStudents();
 
   if (students.length === 0) {
     let noDataRow = document.createElement("tr");
     let noDataCell = document.createElement("td");
-    noDataCell.colSpan = 10; // match your table's column count
+    noDataCell.colSpan = 10; 
     noDataCell.textContent = "No Data Available";
     noDataCell.style.textAlign = "center";
     noDataCell.style.fontWeight = "bold";
     noDataCell.style.backgroundColor = "#f9f9f9";
     noDataRow.appendChild(noDataCell);
     tbody.appendChild(noDataRow);
-    return; // stop here if no data
+    return; 
   }
 
   students.forEach(student => {
@@ -432,3 +432,4 @@ function renderTable(studentsList = null) {
 }
 
 renderTable();
+
