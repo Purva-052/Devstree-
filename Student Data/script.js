@@ -353,13 +353,13 @@ document.getElementById("scoreFilter").addEventListener("change", function () {
   if (value) {
     let filtered;
     if (value === "32") {
-      // Special case: Below 33%
+     
       filtered = students.filter(student => {
         const { avgScore } = calcScores(student);
         return avgScore < 33;
       });
     } else {
-      // Above X%
+      
       filtered = students.filter(student => {
         const { avgScore } = calcScores(student);
         return avgScore >= parseInt(value);
@@ -432,4 +432,5 @@ function renderTable(studentsList = null) {
 }
 
 renderTable();
+
 
