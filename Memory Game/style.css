@@ -1,0 +1,67 @@
+*{
+    margin:0;
+    padding: 0;
+}
+body{
+    background: radial-gradient(circle,#8b93cf,#eda5b2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #080a18;
+    font-family: sans-serif;
+}
+.title{
+    font-size: 30px;
+    font-weight: 900;
+    margin-top: 10px;
+}
+.game_container{
+    text-align: center;
+    background-color: rgba(248, 249, 249, 0.5);
+    font-weight: 600;
+    padding: 20px;
+    box-shadow: 0 0 15px #8890c9;
+    border-radius: 10px;
+    width: 500px;
+    place-items: center;
+}
+.game_cards{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap:10px ;
+    margin: 20px 0px 20px 0px;
+}
+.card{
+    width:120px;
+    height:80px;
+    background-color: rgb(247, 244, 241);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform .3s ease,box-shadow .3s ease;
+    /* transform:rotateY(180deg); */
+    font-size: large;
+}
+.card:hover{
+    box-shadow: 0 0 6px rgb(84, 84, 130);
+}
+.card.turned{
+    background-color: rgba(126, 126, 192, 0.8);
+    transform: rotateY(180deg);
+    
+}
+.restart_btn{
+    margin-top: 20px;
+    background-color: azure;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 18px;
+}
+.restart_btn:hover{
+    box-shadow: 0 0 6px rgb(84, 84, 130);
+}
