@@ -35,7 +35,6 @@ function turnCard() {
         this.classList.add("turned");
         this.innerHTML = this.getAttribute("emoji");
         turnedCards.push(this);
-
         console.log(game)
 
         if (turnedCards.length === 2) {
@@ -61,8 +60,8 @@ function matchCard() {
         if (matchedPairs === emojis.length) {
             clearInterval(timeInterval);
             setTimeout(() => alert("You Won!!"), 100);
-            game.innerHTML="You Won"
-            game.style.display="block"
+            // game.innerHTML="You Won"
+            // game.style.display="block"
         }
     } else {
         turnedCards.forEach(card => {
@@ -96,12 +95,13 @@ function countdown(){
                 card.style.pointerEvents = "none";
             });
         }
-    }, 500)}; 
+    }, 1000)}; 
     // clearInterval(countdownInterval); 
 
 
 function startGame() {
     moves = 0;
+    score=0;
     moveCounter.textContent = moves;
     matchedPairs = 0;
     turnedCards = [];
@@ -115,4 +115,3 @@ restartBtn.style.cursor="pointer"
 restartBtn.addEventListener("click", startGame)
 
 startGame();
-
