@@ -36,6 +36,8 @@ function turnCard() {
         this.innerHTML = this.getAttribute("emoji");
         turnedCards.push(this);
 
+        console.log(game)
+
         if (turnedCards.length === 2) {
             setTimeout(matchCard, 300);
         }
@@ -113,3 +115,4 @@ restartBtn.style.cursor="pointer"
 restartBtn.addEventListener("click", startGame)
 
 startGame();
+
