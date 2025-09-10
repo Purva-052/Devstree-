@@ -101,8 +101,9 @@ function countdown(){
 
 function startGame() {
     moves = 0;
-    score=0;
     moveCounter.textContent = moves;
+    score=0;
+    scoreCount.textContent=score
     matchedPairs = 0;
     turnedCards = [];
     createGame();
@@ -115,3 +116,4 @@ restartBtn.style.cursor="pointer"
 restartBtn.addEventListener("click", startGame)
 
 startGame();
+
