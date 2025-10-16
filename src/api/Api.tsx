@@ -13,6 +13,7 @@ export const fetchPost=async(id: string)=> {
   const { data } = await api.get(`/posts/${id}`);
   return data;
 }
+
 export const fetchComments= async(postId: string) =>{
   const { data } = await api.get(`/posts/${postId}/comments`);
   return data;

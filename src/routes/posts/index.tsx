@@ -18,8 +18,8 @@ const { data, isLoading, isError } = useQuery({
   queryFn: fetchPosts,
 })
 
-  if (isLoading) return <p>Loading posts...</p>
-  if (isError) return <p>Error loading posts.</p>
+  if (isLoading) return <p className='text-white'>Loading posts...</p>
+  if (isError) return <p className='text-white'>Error loading posts.</p>
 
   interface Post  {
   userId: number,
@@ -29,13 +29,15 @@ const { data, isLoading, isError } = useQuery({
 }
 
   return (
-    <ul className="space-y-3">
+    <ul>
       {data.map((post: Post) => (
-        <li key={post.id} className="border p-10  rounded-2xl hover:bg-blue-50">
-          <Link to={`/posts/${post.id}`} className="text-black-800 list-disc font-bold hover:underline">
+        <li key={post.id} className="border p-12 bg-[#aabdd2] rounded-2xl hover:bg-blue-50 m-9">
+          <Link to={`/posts/${post.id}`}
+           className="text-black-800 list-disc font-bold hover:underline ">
             {post.title }
-          </Link>
-          <p className="text-black-600 text-sm mt-1">{post.body}</p>
+          
+          <p className="text-black-600 text-md mt-1">{post.body}</p>
+        </Link>
         </li>
       ))}
     </ul>
